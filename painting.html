@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painting Work</title>
+    <style>
+/*  Navbar Section */
+.navbar-section {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #040837;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 20px;
+    color: white;
+}
+
+.navbar .logo img {
+    width: 120px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #FFCC00;
+}
+
+/*  Enquiry Button */
+.enq-btn {
+    background-color: #FFCC00;
+    color: black;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.enq-btn:hover {
+    background-color: #e0a800;
+}
+
+/* Mobile Menu Icon */
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background-color: #040837;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+    .navbar{
+        justify-content: space-between;
+    }
+}
+/*  Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+/* Panner section starts here */
+.hero-section {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 70vh;
+    }
+    .hero-image img {
+        height: 70vh;
+    }
+}
+
+/* Constuling starts here */
+.row{
+    background: #fffbe6;
+    width: 100%;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    padding: 40px 20px;
+    border-radius: 10px;
+}
+
+.text-content {
+    max-width: 55%;
+}
+
+.text-content h1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.text-content p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.image-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+.head-color{
+    color: #FFCC00;
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .text-content {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .image-content {
+        max-width: 80%;
+    }
+}
+/* popup starts here */
+.container8 {
+    display: flex;
+    max-width: 900px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.left-side {
+    width: 40%;
+    background: #fff4cc;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.left-side h2 {
+    font-size: 24px;
+    color: black;
+}
+.left-side span {
+    color: #f4b400;
+    font-weight: bold;
+}
+.right-side {
+    width: 60%;
+    padding: 30px;
+    position: relative; /* Needed for close button */
+}
+.right-side h2 {
+    font-size: 24px;
+    color: black;
+}
+.highlight {
+    color: #f4b400;
+    font-weight: bold;
+}
+input, select, textarea {
+    width: 98%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #FFCC00;
+    border-radius: 5px;
+}
+.radio input{
+    width: 20px;
+}
+
+.radio button{
+    margin-top: 20px;
+    display: inline-block;
+}
+.form-button {
+    width: 100%;
+    background: #f4b400;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+label {
+    margin: 10px 0;
+}
+.illustration {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+/* Popup Modal */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    
+}
+.popup-content {
+    background: white;
+    padding: 20px;
+    width: 50%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Close Button */
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+
+}
+
+.p-close{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.pp-close{
+    width: 50%;
+    button{
+        float: right;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 1024px){
+    .popup-content{
+        width: 80%;
+        height: auto;
+    }
+}
+@media (max-width:905px){
+    .left-side{
+        display: none;
+    }
+    .container8 {
+        width: 80%;
+        height: auto;
+    }
+    .right-side{
+        width: 100%;
+        height: auto;
+        padding: 10px 30px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .popup-content {
+        width: 90%;
+        height: auto;
+    }
+    .container8 {
+        width: 80%;
+        height: auto;
+    }
+}
+/* Footer section starts here */
+.footer {
+    background-color: #040837;
+    color: white;
+    padding: 40px 60px;
+    font-family: poppins, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+    margin: auto;
+}
+
+/* Columns */
+.footer-column {
+    flex: 1;
+    margin-right: 40px;
+}
+
+/* Logo */
+.footer-logo {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+/* Heading Styling */
+.footer h3, h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer .highlight {
+    color: #f7c843;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 50px;
+}
+
+/* Paragraph & List */
+.footer p {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 20px;
+    margin-bottom: 8px;
+    line-height: 1.9;
+    cursor: pointer;
+}
+
+/* Social Icons */
+.social-icons img {
+    margin-top: 20px;
+    width: 40px;
+    margin-right: 8px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Contact Section */
+.contact-info li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon{
+    border: 1px solid #FFCC00;
+    width: 28px;
+    height: 28px;
+    border-radius: 50px;
+    padding: 3px;
+    background-color: #FFCC00;
+    color: black;
+}
+/* Responsive */
+@media (max-width:1440px){
+    .footer{
+        width: 100%;
+        padding: 40px 20px;
+    }
+    .footer-container{
+        width: 100%;
+    }
+    .footer-column{
+        flex: 2;
+    }
+}
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-column {
+        text-align: center;
+        width: 100%;
+        margin: auto;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+    .footer p{
+        font-size: 17px;
+    }
+    ul li{
+        font-size: 17;
+    }
+    .contact-info{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 407px) {
+   .info1{
+     width: 70%;
+   }
+}
+   </style>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- Navbar section starts here -->
+    <div class="navbar-section">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="IMG/logo.jpg" alt=""></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="design.html">Plan & Pricing</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="#"><button class="enq-btn" onclick="openPopup()">Enquiry</button></a></li>            </ul>
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        </nav>
+    </div>
+
+    <!-- popup starts here -->
+    <div class="popup" id="enquiryPopup">
+        <div class="container8">
+            <div class="left-side">
+                <h2>Do you have a <span>Questions?</span></h2>
+                <p>Serving the greater Seattle area beyond. For more information on our services, or to inquire about a future project, give us a call!</p>
+                <img src="IMG/Group 233.png" alt="Get in touch illustration" class="illustration">
+            </div>
+            <div class="right-side">
+                <div class="flex items-center min-h-screen bg-gray-50 dark:bg-gray-900">
+                    <div class="container13 mx-auto">
+                      <div class="max-w-md mx-auto my-10 bg-white p-5 rounded-md shadow-sm">
+                        <div class="text-center">
+                          
+                            <div class="p-close">
+                                <div class="pp-close">
+                                    <h2>Quick <span class="highlight">Enquiry</span></h2>
+                                </div>
+                                <div class="pp-close">
+                                    <button class="close-btn" onclick="closePopup()">&times;</button> 
+                                </div>
+                            </div>
+                          
+
+                        </div>
+                        <div class="m-7">
+                          <form action="https://api.web3forms.com/submit" method="POST" id="form">
+                            <input type="hidden" name="access_key" value="dfbba4d0-e916-43a9-9ba1-31e2fa3b272c" />
+                            <input type="hidden" name="subject" value="Enquire Form Submission " />
+                            <input type="checkbox" name="botcheck" id="" style="display: none;" />
+                  
+                            <div class="mb-6">
+                              <label for="name" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Full Name</label>
+                              <input type="text" name="name" id="name" placeholder="Enter Your Name" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                            </div>
+                            <div class="mb-6">
+                              <label for="email" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Email Address</label>
+                              <input type="email" name="email" id="email" placeholder="Enter Your Email" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                            </div>
+                            <div class="mb-6">
+                              <label for="phone" class="text-sm text-gray-600 dark:text-gray-400">Phone Number</label>
+                              <input type="number" name="phone" id="phone" placeholder="Enter Phone Number" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                            </div>
+                            <div class="mb-6">
+                                <label for="phone" class="text-sm text-gray-600 dark:text-gray-400">Select Services</label>
+                                <select id="services">
+                                    <option value="">Services</option>
+                                    <option value="Construction">Construction</option>
+                                    <option value="Interior Design">Interior Design</option>
+                                    <option value="Renovation">Renovation</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                              <label for="message" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Your Message</label>
+                  
+                              <textarea rows="5" name="message" id="message" placeholder="Your Message" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" required></textarea>
+                            </div>
+                            <div class="mb-6">
+                                <div class="radio">
+                                    <input type="checkbox" id="robotCheck">
+                                    <label>I'm not a robot</label>
+                                    <button type="submit" class="form-button">Submit</button>
+                                </div>
+                            </div>
+                            <p class="text-base text-center text-gray-400" id="result"></p>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panner section starts here  -->
+    <div class="hero-section">
+        <div class="hero-image">
+            <img src="IMG/painting-work.png" alt="Modern Villa">
+        </div>
+    </div>
+
+    <!-- Consulting starts here -->
+     <div class="row">
+        <div class="container">
+            <div class="text-content">
+                <h1><span class="head-color">Painting</span> Work</h1><br>
+                <p>
+                    Painting is a form of visual art that involves applying pigment to a surface, such as canvas, wood, or paper, to create expressive images or designs. It has been a means of human expression for centuries, evolving through different styles and techniques. From traditional oil and watercolor paintings to modern abstract works, painting allows artists to convey emotions, ideas, and stories. It serves as both an aesthetic pursuit and a way to explore the world, offering a timeless medium for creativity and personal reflection.                </p>
+            </div>
+            <div class="image-content">
+                <img src="IMG/sd2.bbd111f7a10523c4c2b3 1.png " alt="Consulting Illustration">
+            </div>
+        </div>
+     </div>
+
+    <!-- Footer section starts here  -->
+    <div class="footer">
+        <div class="footer-container">
+            <!-- Company Info -->
+            <div class="footer-column">
+                <img src="IMG/logo.jpg" alt="Nagercoil Builders Logo" class="footer-logo">
+                <!-- <h3><span class="highlight">Nagercoil</span> Builders</h3> -->
+                <p>Nagercoil Builders offering a range of services from residential and commercial building to interior
+                    design and renovation.</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/nagercoilbuilderss?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="IMG/instagram.png" alt="Instagram"></a>
+                    <a href="http://www.youtube.com/@Nagercoilbuilders"><img src="IMG/youtube.png" alt="YouTube"></a>
+                    <a href="https://www.facebook.com/profile.php?id=61563730416828"><img src="IMG/communication.png" alt="Facebook"></a>
+                </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="footer-column">
+                <h4 class="highlight">Categories</h4>
+                <ul >
+                    <a href="about.html" style="text-decoration: none;color: white;"><li>About Us</li></a>
+                    <a href="service.html" style="text-decoration: none;color: white;"> <li>Services</li></a>
+                    <a href="design.html" style="text-decoration: none;color: white;"><li>Plans and Pricing</li></a>
+                    <a href="project.html" style="text-decoration: none;color: white;"><li>Projects</li></a>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-column">
+                <h4 class="highlight">Contact Us</h4>
+                <ul class="contact-info">
+                    <a href="tel:+919597751076" style="text-decoration: none;color: white;"><li><i class='bx bxs-phone icon'></i> +91 9597751076, 9443102048</li></a>
+                    <a href="#" style="text-decoration: none;color: white;" onclick="openPopup()"> <li><i class='bx bxs-envelope icon' ></i> nagercoilbuilders2@gmail.com</li></a>
+                    <a href="index.html" style="text-decoration: none;color: white;"><li><i class='bx bx-world icon' ></i> www.nagercoilbuilders.com</li></a>
+                    <a href="#" style="text-decoration: none;color: white;"><li><i class='bx bxs-navigation icon'></i> 4/26A Adaikalapattinam, Pavoorchatram.</li></a>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+function toggleMenu(){
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+
+function showBasic() {
+    document.querySelector('.row1').classList.remove('hidden');
+    document.querySelector('.row2').classList.add('hidden');
+    document.querySelector('.row3').classList.add('hidden');
+}
+
+function showStandard() {
+    document.querySelector('.row1').classList.add('hidden');
+    document.querySelector('.row2').classList.remove('hidden');
+    document.querySelector('.row3').classList.add('hidden');
+}
+
+function showPremium() {
+    document.querySelector('.row1').classList.add('hidden');
+    document.querySelector('.row2').classList.add('hidden');
+    document.querySelector('.row3').classList.remove('hidden');
+}
+
+
+document.querySelector(".btn-basic").addEventListener("click", function () {
+    this.style.backgroundColor = "#f4b400"; // Changes to green when clicked
+    document.querySelector(".btn-standard").style.backgroundColor = "#0c0c3c";
+    document.querySelector(".btn-premium").style.backgroundColor = "#0c0c3c";
+
+});
+
+document.querySelector(" .btn-standard").addEventListener("click", function () {
+    this.style.backgroundColor = "#f4b400"; // Changes to green when clicked
+    document.querySelector(".btn-basic").style.backgroundColor = "#0c0c3c";
+    document.querySelector(".btn-premium").style.backgroundColor = "#0c0c3c";
+
+});
+
+document.querySelector(".btn-premium").addEventListener("click", function () {
+    this.style.backgroundColor = "#f4b400"; // Changes to green when clicked
+    document.querySelector(".btn-basic").style.backgroundColor = "#0c0c3c";
+    document.querySelector(".btn-standard").style.backgroundColor = "#0c0c3c";
+
+});
+// function openPopup() {
+//     document.getElementById("enquiryPopup").style.display = "flex";
+// }
+// function closePopup() {
+//     document.getElementById("enquiryPopup").style.display = "none";
+// }
+
+
+// document.getElementById("phone").addEventListener("input", function (e) {
+//     this.value = this.value.replace(/[^0-9]/g, ""); // Only numbers
+
+//     // Restrict to 10 digits
+//     if (this.value.length > 10) {
+//       this.value = this.value.slice(0, 10);
+//     }
+// });
+
+// document.getElementById("phone").addEventListener("blur", function () {
+//     if (this.value.length !== 10) {
+//       alert("Phone number must be exactly 10 digits!");
+//       this.value = ""; // Clear input if not 10 digits
+//     }
+// });
+
+// const form = document.getElementById("form");
+// const result = document.getElementById("result");
+
+// form.addEventListener("submit", function (e) {
+// const formData = new FormData(form);
+// e.preventDefault();
+// var object = {};
+// formData.forEach((value, key) => {
+//     object[key] = value;
+// });
+// var json = JSON.stringify(object);
+// result.innerHTML = "Please wait...";
+
+// fetch("https://api.web3forms.com/submit", {
+//     method: "POST",
+//     headers: {
+//     "Content-Type": "application/json",
+//     Accept: "application/json"
+//     },
+//     body: json
+// })
+//     .then(async (response) => {
+//     let json = await response.json();
+//     if (response.status == 200) {
+//         result.innerHTML = json.message;
+//         result.classList.remove("text-gray-500");
+//         result.classList.add("text-green-500");
+//     } else {
+//         console.log(response);
+//         result.innerHTML = json.message;
+//         result.classList.remove("text-gray-500");
+//         result.classList.add("text-red-500");
+//     }
+//     })
+//     .catch((error) => {
+//     console.log(error);
+//     result.innerHTML = "Something went wrong!";
+//     })
+//     .then(function () {
+//     form.reset();
+//     setTimeout(() => {
+//         result.style.display = "none";
+//     }, 5000);
+//     });
+// });
+
+
+
+
+// ✅ Open & Close Popup
+function openPopup() {
+    let popup = document.getElementById("enquiryPopup");
+    if (popup) popup.style.display = "flex";
+}
+
+function closePopup() {
+    let popup = document.getElementById("enquiryPopup");
+    if (popup) popup.style.display = "none";
+}
+
+// ✅ Phone Number Validation
+const phoneInput = document.getElementById("phone");
+
+phoneInput.addEventListener("input", function () {
+    this.value = this.value.replace(/[^0-9]/g, ""); // Allow only numbers
+    if (this.value.length > 10) this.value = this.value.slice(0, 10); // Restrict to 10 digits
+});
+
+phoneInput.addEventListener("paste", function (e) {
+    e.preventDefault(); // Block pasting non-numeric values
+});
+
+phoneInput.addEventListener("blur", function () {
+    if (this.value.length !== 10) {
+        alert("Phone number must be exactly 10 digits!");
+        this.value = ""; // Clear input if invalid
+    }
+});
+
+// ✅ Form Submission Handling
+const form = document.getElementById("form");
+const result = document.getElementById("result");
+
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    
+    // Check if phone number is exactly 10 digits before submission
+    if (phoneInput.value.length !== 10) {
+        alert("Phone number must be exactly 10 digits!");
+        return;
+    }
+
+    // Validate "I'm not a robot" checkbox
+    const robotCheck = document.getElementById("robotCheck");
+    if (!robotCheck.checked) {
+        alert("Please confirm that you are not a robot!");
+        return;
+    }
+
+    // ✅ Prepare Data for Web3Forms API
+    const formData = new FormData(form);
+    let object = {};
+    formData.forEach((value, key) => { object[key] = value; });
+    let json = JSON.stringify(object);
+
+    // ✅ Display "Please wait..." Message
+    result.innerHTML = "Please wait...";
+    result.style.display = "block";
+
+    // ✅ Send Request to Web3Forms
+    fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        },
+        body: json
+    })
+    .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+            result.innerHTML = json.message;
+            result.classList.replace("text-gray-500", "text-green-500");
+
+            // ✅ Auto-close popup after 2 seconds
+            setTimeout(() => {
+                closePopup();
+            }, 2000);
+        } else {
+            console.log(response);
+            result.innerHTML = json.message;
+            result.classList.replace("text-gray-500", "text-red-500");
+        }
+    })
+    .catch((error) => {
+        console.log(error);
+        result.innerHTML = "Something went wrong!";
+        result.classList.replace("text-gray-500", "text-red-500");
+    })
+    .finally(() => {
+        form.reset();
+        setTimeout(() => { result.style.display = "none"; }, 5000);
+    });
+});
+
+    </script>
+</body>
+</html>
